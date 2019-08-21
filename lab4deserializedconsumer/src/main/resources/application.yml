@@ -1,0 +1,10 @@
+app:
+  topic:
+    serialized: serializedproducer
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: com.example.lab4.deserializedconsumer.consumer.deserializer.EmployeeDeserializer
+      group-id: deserializedconsumer

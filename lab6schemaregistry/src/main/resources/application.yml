@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      schema.registry.url: http://localhost:8080/
+      auto.register.schema: false
+    producer:
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: 1
+    consumer:
+      value-deserializer:
+      key-deserializer:
+      enable-auto-commit: false
+      auto-offset-reset: latest
+    listener:
+      ack-mode: manual
+  app:
+    topic: avrotopic
